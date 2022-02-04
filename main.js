@@ -4,7 +4,7 @@ const button = document.querySelector('button');
 const container = document.querySelector('.container');
 const sideInput = document.querySelector('#side-number');
 let currentSides = document.querySelector("#side-number").value;
-
+let currentColor = "#000";
 
 populateGrid(currentSides);
 button.addEventListener('click', clear);
@@ -24,13 +24,15 @@ function populateGrid(sides) {
         gridElement.style.width = `${square}%`;
         gridElement.style.height = `${square}%`;
         container.appendChild(gridElement);
-        gridElement.addEventListener('mousedown', function(event) {
-            this.classList.add('filled');
-        });
-        gridElement.addEventListener('mouseover', function(event) {
-            if (mousedown) { this.classList.add('filled'); }
-        });
+        gridElement.addEventListener('mousedown',draw);
+        gridElement.addEventListener('mouseover',draw);    
     }
+}
+
+function draw() {
+    if (event.type === 'mouseover' && !mousedown) {return};
+    this.style.backgroundColor = currentColor;
+
 }
 
 function clear() {
