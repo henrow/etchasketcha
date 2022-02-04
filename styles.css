@@ -12,6 +12,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #e9edf6;
 }
 
 button {
@@ -21,6 +22,7 @@ button {
     padding: 10px 20px;
     border: 3px solid black;
     border-radius: 5px;
+    box-shadow: 2px 2px 4px grey;
 }
 
 .container {
@@ -28,16 +30,29 @@ button {
     height: 80vw;
     display: flex;
     flex-flow: row wrap;
-    border: 5px solid black;
 
+}
+
+.input {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid {
     box-sizing: border-box;
     flex: 1 0 auto;
-    border: 1px solid azure;
+    border: 1px solid #f2f3f4;
 }
 
 .filled {
     background-color: #de7e5d;
+    border: 1px solid #e18a6d;
+}
+
+#side-number {
+    font-family: Futura, sans-serif;
+    font-size: 2em;
+    padding: 4px 10px;
 }
